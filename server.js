@@ -10,6 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //parse requests of content-type - application/json
 app.use(bodyParser.json());
 
+// set the view engine to ejs
+app.set('view engine','ejs');
+
 //Configuring the database
 var dbConfig = require('./config/database.config.js');
 var mongoose = require('mongoose');
@@ -29,7 +32,8 @@ mongoose.connection.once('open', function () {
 
 //define a simple route
 app.get('/', function (req, res) {
-    res.json({"message": "Welcome to My Online Furniture Store."});
+    let a = products.findAll;
+    res.render('index');
 });
 
 //Require Product routes
