@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
 });
 
 //Require Product routes
-// require('./app/routes/product.routes.js')(app);
+require('./app/routes/product.routes.js')(app);
 
 //listen for requests
 app.listen(3000, function() {
